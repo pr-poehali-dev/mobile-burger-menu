@@ -3,14 +3,34 @@ import Header from '@/components/Header';
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="app-container">
       <Header />
-      <div className="flex-1 flex items-center justify-center bg-gray-100">
-        <div className="text-center px-4">
-          <h1 className="text-4xl font-bold mb-4 text-black">Добро пожаловать!</h1>
-          <p className="text-xl text-gray-600">Сайт T-Rex Entertainment</p>
+      <main className="main">
+        <div className="banner">
+          <div className="banner__text">
+            Добро пожаловать в T-Rex Entertainment!
+          </div>
+          <button className="banner__button">
+            <img 
+              src="https://github.com/T-Rex-Entertainment/T-Rex-Entertainment.github.io/blob/main/images/arrowdown.png?raw=true" 
+              alt="Scroll Down" 
+              width="40" 
+              height="40" 
+            />
+          </button>
         </div>
-      </div>
+        
+        <section className="about">
+          <h2>О НАШЕЙ СТУДИИ</h2>
+          <p>
+            Мы - команда разработчиков игр, создающая увлекательные миры и незабываемые впечатления.
+            Наша миссия - делать игры, которые объединяют людей и дарят радость.
+          </p>
+        </section>
+      </main>
+      <footer className="footer">
+        <p>© 2025 T-Rex Entertainment. Все права защищены.</p>
+      </footer>
     </div>
   );
 };
