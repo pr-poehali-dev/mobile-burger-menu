@@ -3,35 +3,67 @@ import Header from '@/components/Header';
 
 const Index = () => {
   return (
-    <div className="app-container">
+    <>
       <Header />
-      <main className="main">
+      <main className="main">  
+        {/* Баннер */}
         <div className="banner">
-          <div className="banner__text">
-            Добро пожаловать в T-Rex Entertainment!
-          </div>
-          <button className="banner__button">
+          <video className="banner__video" autoPlay loop muted playsInline>
+            <source src="https://github.com/T-Rex-Entertainment/T-Rex-Entertainment.github.io/blob/main/videos/primer1.mp4?raw=true" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <div className="banner__text" id="banner-text">CREATORS OF INTERACTIVE STORIES</div>
+          <button 
+            className="banner__button" 
+            onClick={() => window.scrollTo({ top: 600, behavior: 'smooth' })}
+          >
             <img 
-              src="https://github.com/T-Rex-Entertainment/T-Rex-Entertainment.github.io/blob/main/images/arrowdown.png?raw=true" 
-              alt="Scroll Down" 
+              src="https://github.com/T-Rex-Entertainment/T-Rex-Entertainment.github.io/blob/main/images/arrow.png?raw=true" 
+              alt="Arrow" 
               width="40" 
               height="40" 
             />
           </button>
         </div>
+
+        {/* Новости */}
+        <section className="news-section">
+          <h2 id="news-title">Новости</h2>
+          {/* Контейнер для новостей */}
+          <div id="news-container" className="news-list">
+            {/* Здесь будут динамически загружаться новости */}
+          </div>
+        </section>
         
-        <section className="about">
-          <h2>О НАШЕЙ СТУДИИ</h2>
-          <p>
-            Мы - команда разработчиков игр, создающая увлекательные миры и незабываемые впечатления.
-            Наша миссия - делать игры, которые объединяют людей и дарят радость.
-          </p>
+        {/* Контакты */}
+        <section className="contacts">
+          <h2>Контакты</h2>
+          <p>Email: trex-entertainment@gmail.com</p>
+          <p>Адрес: 1234 Street Name, City, Country</p>
         </section>
       </main>
-      <footer className="footer">
-        <p>© 2025 T-Rex Entertainment. Все права защищены.</p>
-      </footer>
-    </div>
+
+      {/* Куки-уведомление */}
+      <div id="cookie-consent" style={{ display: 'none' }}>
+        <p>Этот сайт использует cookies для улучшения работы с пользователем. <a href="/privacy-policy">Подробнее</a>.</p>
+        <button id="accept-cookies">Принять</button>
+        <button id="decline-cookies">Отказаться</button>
+      </div>
+
+      {/* Кнопка прокрутки вверх */}
+      <button 
+        className="scroll-to-top" 
+        style={{ display: 'none' }}
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+      >
+        <img 
+          src="https://github.com/T-Rex-Entertainment/T-Rex-Entertainment.github.io/blob/main/images/arrowup.png?raw=true" 
+          alt="Scroll to top" 
+          width="40" 
+          height="40" 
+        />
+      </button>
+    </>
   );
 };
 
